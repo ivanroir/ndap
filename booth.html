@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Booth Exhibit</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("img/booth/bg.png");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 100vh;
+        }
+
+        .overlay {
+            position: absolute; 
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .booth {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-5">
+                <div class="row" style="height: 100%; padding: 20px; align-items: center; ">
+                    <div class="col-12">
+                        <img class="booth" src="img/booth/1st.png"  />
+                    </div>
+                    <div class="col-12">
+                        <img class="booth" src="img/booth/2nd.png"  />
+                    </div>
+                    <div class="col-12">
+                        <img class="booth" src="img/booth/3rd.png"  />
+                    </div>
+                </div>
+            </div>
+            <div class="col-2" style="position: relative;">
+                <img src="img/booth/line.png" style="height: 100%; width: 100%;" />
+                <div class="overlay">
+                    <div class="row">
+                        <div class="col-12 p-1">
+                            <button class="btn"><img src="img/booth/next.png" style="width: 75%" /></button>
+                        </div>
+                        <div class="col-12 p-1">
+                            <button class="btn"><img src="img/booth/home.png" style="width: 75%" /></button>
+                        </div>
+                        <div class="col-12 p-1">
+                            <button class="btn"><img src="img/booth/help.png" style="width: 75%" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="row" style="height: 100%; padding: 20px; align-items: center;">
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                    <div class="col-6">
+                        <img class="booth" src="img/booth/basic.png"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Plenary Intro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("img/plenary/bg.png");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 100vh;
+        }
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row" style="height: 90vh;">
+        <div class="col-3" style="border-style: solid;">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="img/plenary/icon.png" />
+                </div>
+                <div class="col-12 text-center">
+                    <button class="btn">
+                        <img src="img/plenary/enter.png" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" style="border-style: solid;">
+            <div class="col-12">
+                <img src="img/plenary/icon.png" />
+            </div>
+            <div class="col-12">
+                <img src="img/plenary/icon.png" />
+            </div>
+        </div>
+    </div>
+    <div class="row" style="height: 10vh;">
+        <div class="col-3 text-center" style="border-style: solid;">
+            <label id="date" style="font-size: 2.5rem; color: white;"></label>
+        </div>
+        <div class="col-9" style="border-style: solid;">
+            <div class="row" style="align-items: center;">
+                <div class="col-3">
+                    <img src="img/plenary/sponsor.png" />
+                </div>
+                <div class="col-3">
+                    <img src="img/plenary/sponsor.png" />
+                </div>
+                <div class="col-3">
+                    <img src="img/plenary/sponsor.png" />
+                </div>
+                <div class="col-3">
+                <div class="row">
+                    <div class="col-6">
+                            <img src="img/plenary/home.png" />
+                        </div>
+                        <div class="col-6">
+                            <img src="img/plenary/next.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        var clockElement = document.getElementById('date');
+
+
+
+        function clock() {
+            var hour = new Date().getHours().toString();
+            var minute = new Date().getMinutes().toString();
+            var second = new Date().getSeconds().toString();
+            var ampm = "";
+
+            if(hour > 12) {
+                hour = hour - 12;
+                ampm = "P.M.";
+            }
+            else if (hour == 0) { 
+                hour = 12;
+                ampm = "A.M.";
+            }
+            else if(hour < 12) {
+                ampm = "A.M.";
+            }
+            else if(hour == 12) {
+                ampm = "P.M.";
+            }
+
+            clockElement.textContent =  hour + ":" + minute + ":" + second + " " + ampm; 
+        }
+        setInterval(clock, 500);
+
+    </script>
+    
+</body>
+</html>

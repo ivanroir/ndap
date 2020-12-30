@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Plenary Watch</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <iframe src="https://embed.restream.io/player/index.html?token=829f1dea602c905350ae8c85fc341949" width="960" height="576" frameborder="0" allowfullscreen></iframe>
+
+    <p id="date"></p>
+    <p id="schedule"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        var clockElement = document.getElementById('date');
+        var schedule = new Date(2020, 11, 31, 20, 40, 0);
+        console.log(clockElement.textContent < schedule);
+
+        function clock() {
+            clockElement.textContent = new Date().toString();
+            document.getElementById("schedule").innerHTML = schedule;
+            
+        }
+        setInterval(clock, 1000);
+
+    </script>
+
+
+</body>
+</html>
