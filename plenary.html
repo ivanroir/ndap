@@ -173,25 +173,21 @@
     <script>
         if(screen.availHeight > screen.availWidth){
             document.getElementById('landscape').style.display = "none";
-            document.getElementById('portrait').style.display = "flex";
-            alert("Portrait");
+            document.getElementById('portrait').style.display = "flex";            
         }
         else if(screen.availHeight < screen.availWidth){
             document.getElementById('landscape').style.display = "flex";
-            document.getElementById('portrait').style.display = "none";
-            alert("Landscape");
+            document.getElementById('portrait').style.display = "none";            
         }
         window.addEventListener("orientationchange", function() {
             // Announce the new orientation number
             if(screen.availHeight > screen.availWidth){
                 document.getElementById('landscape').style.display = "none";
-                document.getElementById('portrait').style.display = "flex";
-                alert("Portrait");
+                document.getElementById('portrait').style.display = "flex";                
             }
             else if(screen.availHeight < screen.availWidth){
                 document.getElementById('landscape').style.display = "flex";
-                document.getElementById('portrait').style.display = "none";
-                alert("Landscape");
+                document.getElementById('portrait').style.display = "none";                
             }
 
         }, false);
