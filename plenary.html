@@ -199,7 +199,7 @@
 
         function clock() {
             var hour = new Date().getHours().toString();
-            var minute = new Date().getMinutes().toString();
+            var minute = (new Date().getMinutes().toString() < 10? '0' : '') + new Date().getMinutes().toString(); 
             var second = new Date().getSeconds().toString();
 
             var month = new Array();
