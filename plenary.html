@@ -36,10 +36,10 @@
         <div class="col-3" style="border: 1px solid white; padding: 0px;">
             <div class="row">
                 <div style="height: 90vh; padding-top: 30px;">
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center" style="height: 50vh;">
                         <img src="img/plenary/icon.png" style="width: 50%;" />
                     </div>
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center" style="height: 50vh;"   >
                         <button class="btn">
                             <img src="img/plenary/enter.png" style="height: 100%; width: 100%;" />
                         </button>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="col-12" style="color: white; height: 100%; background-color: rgba(0, 0, 0, 0.8); padding-top: 30px;">
-                        <div class="overflow-auto" style="position: absolute; padding-left: 150px; height: 70%; width: 75%;" >
+                        <div class="overflow-auto" style="position: absolute; padding-left: 100px; height: 65%; width: 75%;" >
                             <div class="row" id="sched"></div>
                         </div>
                     </div>
@@ -84,10 +84,14 @@
                             <div class="col-3">
                                 <div class="row">
                                     <div class="col-6">
-                                        <img src="img/plenary/home.png" />
+                                        <button class="btn">
+                                            <img src="img/plenary/home.png" />
+                                        </button>
                                     </div>
                                     <div class="col-6">
-                                        <img src="img/plenary/next.png" />
+                                        <button class="btn">
+                                            <img src="img/plenary/next.png" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -190,20 +194,20 @@
 
             if(hour > 12) {
                 hour = hour - 12;
-                ampm = "P.M.";
+                ampm = "pm";
             }
             else if (hour == 0) { 
                 hour = 12;
-                ampm = "A.M.";
+                ampm = "am";
             }
             else if(hour < 12) {
-                ampm = "A.M.";
+                ampm = "am";
             }
             else if(hour == 12) {
-                ampm = "P.M.";
+                ampm = "pm";
             }
 
-            timeElement.textContent = hour + ":" + minute + ":" + second + " " + ampm; 
+            timeElement.textContent = hour + ":" + minute + ampm; 
             dateElement.textContent = monthName + " " + day + ", " + year
         }
         setInterval(clock, 500);
