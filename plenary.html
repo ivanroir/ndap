@@ -37,7 +37,10 @@
     </style>    
 </head>
 <body>
-    <div class="row" style="height: 100vh;">
+    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+        <h1>PLEASE USE LANDSCAPE</h1>
+    </div>
+    <div class="row" id="landscape" style="height: 100vh;">
         <div class="col-3" style="border: 1px solid white; padding: 0px;">
             <div class="row">
                 <div style="height: 85vh; padding-top: 30px;">
@@ -169,17 +172,25 @@
     </script>
     <script>
         if(screen.availHeight > screen.availWidth){
-                alert("Portrait");
-            }
-            else if(screen.availHeight < screen.availWidth){
-                alert("Landscape");
-            }
+            document.getElementById('landscape').style.display = "none";
+            document.getElementById('portrait').style.display = "flex";
+            alert("Portrait");
+        }
+        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('landscape').style.display = "flex";
+            document.getElementById('portrait').style.display = "none";
+            alert("Landscape");
+        }
         window.addEventListener("orientationchange", function() {
             // Announce the new orientation number
             if(screen.availHeight > screen.availWidth){
+                document.getElementById('landscape').style.display = "none";
+                document.getElementById('portrait').style.display = "flex";
                 alert("Portrait");
             }
             else if(screen.availHeight < screen.availWidth){
+                document.getElementById('landscape').style.display = "flex";
+                document.getElementById('portrait').style.display = "none";
                 alert("Landscape");
             }
 
