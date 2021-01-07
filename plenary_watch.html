@@ -1,39 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
     <title>Plenary Watch</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
+
 <body>
+    <div style="height: 90vh">
+        <!--player code begin-->
+        <div id="svp_playerbuvay625lggk" style="width: 100%; height: 802px; position: relative"></div>
+        <script language="javascript" type="text/javascript"
+            src="//play.streamingvideoprovider.com/js/dplayer.js"></script>
+        <script language="javascript">
+            var vars = {
+                clip_id: "buvay625lggk",
+                transparent: "true",
+                pause: "0",
+                repeat: "",
+                bg_color: "#ffffff",
+                fs_mode: "0",
+                no_controls: "1",
+                start_img: "0",
+                start_volume: "100",
+                close_button: "",
+                brand_new_window: "1",
+                auto_hide: "1",
+                stretch_video: "",
+                player_align: "NONE",
+                offset_x: "0",
+                offset_y: "0",
+                player_color_ratio: 0.6,
+                skinAlpha: "50",
+                colorBase: "#250864",
+                colorIcon: "#ffffff",
+                colorHighlight: "#7f54f8",
+                direct: "false",
+                is_responsive: "true",
+                viewers_limit: 0,
+                cc_position: "bottom",
+                cc_positionOffset: 70,
+                cc_multiplier: 0.03,
+                cc_textColor: "#ffffff",
+                cc_textOutlineColor: "#ffffff",
+                cc_bkgColor: "#000000",
+                cc_bkgAlpha: 0.1,
+                aspect_ratio: "adaptive",
+                play_button: "0",
+                play_button_style: "static",
+                sleek_player: "1",
+                floating_player: "none",
+            };
+            var svp_player = new SVPDynamicPlayer(
+                "svp_playerbuvay625lggk",
+                "",
+                "100%",
+                "100%",
+                { use_div: "svp_playerbuvay625lggk", skin: "3" },
+                vars
+            );
+            svp_player.execute();
+        //-->
+        </script>
+        <noscript>Your browser does not support JavaScript! JavaScript is needed to
+            display this video player.</noscript>
+        <!--player code end-->
+    </div>
 
-    <!--<iframe src="https://embed.restream.io/player/index.html?token=829f1dea602c905350ae8c85fc341949" width="960" height="576" frameborder="0" allowfullscreen></iframe>-->
-    <!--<video id="video" src="http://192.168.1.14:8080" autoplay="autoplay" width="704" height="480"></video>-->
-
-    <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F10153231379946729%2F&width=500&show_text=false&height=280&appId" width="500" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-
-    <p id="date"></p>
-    <p id="schedule"></p>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-
-        var clockElement = document.getElementById('date');
-        var schedule = new Date(2020, 11, 31, 20, 40, 0);
-
-        function clock() {
-            clockElement.textContent = new Date().toString();
-            document.getElementById("schedule").innerHTML = schedule;
-            
-        }
-        setInterval(clock, 1000);
-
-    </script>
-
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
