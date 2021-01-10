@@ -95,14 +95,14 @@
   </head>
 
   <body>
-      <div style="height: 10vh; background-color: darkblue;"></div>
+      <div class="wide-screen1" style="height: 10vh; background-color: #01122a;"></div>
       <div id="gameContainer"></div>
       <div id="loader">
         <img class="logo" src="logo.png">
         <div class="spinner"></div>
         <div class="progress"><div class="full"></div></div>
       </div>
-      <div style="height: 10vh; background-color: darkblue;"></div>
+      <div class="wide-screen2" style="height: 10vh; background-color: #01122a;"></div>
       
   </body>
 
@@ -114,16 +114,27 @@
       return;
     }
     const loader = document.querySelector("#loader");
+    const wideScreen1 = document.querySelector(".wide-screen1");
+    const wideScreen2 = document.querySelector(".wide-screen2");
+    const gameContainer = document.querySelector("#gameContainer");
+
     if (!gameInstance.progress) {
       const progress = document.querySelector("#loader .progress");
       progress.style.display = "block";
       gameInstance.progress = progress.querySelector(".full");
       loader.querySelector(".spinner").style.display = "none";
+      wideScreen1.style.height="0vh";
+      wideScreen2.style.height="0vh";
+      gameContainer.style.height="100vh";
+
     }
     gameInstance.progress.style.transform = `scaleX(${progress})`;
     if (progress === 1 && !gameInstance.removeTimeout) {
       gameInstance.removeTimeout = setTimeout(function() {
           loader.style.display = "none";
+          wideScreen1.style.height="10vh";
+          wideScreen2.style.height="10vh";
+          gameContainer.style.height="80vh";
       }, 2000);
     }
   }
