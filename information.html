@@ -3,7 +3,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Plenary Intro</title>
+    <title>Information</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -23,40 +23,65 @@
             cursor: pointer;
         }
 
+        .button {
+            background: url(img/information/button/Button.png);
+            height: 145px;
+            width: 325px;
+        }
+
+        .button:hover {
+            background: url(img/information/button/ButtonHover.png);
+        }
+
+        .img-text {
+            position: absolute;
+            top: 50%;  
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+
     </style>    
 </head>
 <body>
     <div style="position: absolute; z-index: 1; padding: 0; left: 0; top: -50px;">
-        <div style="position: absolute; padding: 0; left: 0;">
-            <img src="img/information/line/ElectionLine.png">
+        <div style="position: absolute; padding: 0; left: 0; top: -75px;">
+            <img src="img/information/button/ElectionLine.png">
         </div>
         <div class="img-button" style="position: absolute; padding: 0; left: 240px; top: 180px;">
-            <img  src="img/information/line/ElectionButton.png">
+            <div class="button">
+                <img class="img-text" src="img/information/button/ElectionText.png">
+            </div>
         </div>
     </div>
     <div style="position: absolute; z-index: 1; padding: 0; right: 0; top: -50px;">
-        <div style="position: absolute; padding: 0; right: 0;">
-            <img src="img/information/line/PreTestLine.png">
+        <div style="position: absolute; padding: 0; right: 0; top: -75px">
+            <img src="img/information/button/PreTestLine.png">
         </div>
         <div class="img-button" style="position: absolute; padding: 0; right: 240px; top: 180px;">
-            <img  src="img/information/line/PreTestButton.png">
+            <div class="button">
+                <img class="img-text" src="img/information/button/PreTestText.png">
+            </div>
         </div>
     </div>
 
-    <div style="position: absolute; z-index: 0; padding: 0; left: 0;">
-        <div style="position: absolute; padding: 0; left: 0;">
-            <img src="img/information/line/EvaluationLine.png">
+    <div style="position: absolute; z-index: 0; padding: 0; left: 0; ">
+        <div style="position: absolute; padding: 0; left: 0; top: -125px;">
+            <img src="img/information/button/EvaluationLine.png">
         </div>
         <div class="img-button" style="position: absolute; padding: 0; left: 320px; top: 340px;">
-            <img  src="img/information/line/EvaluationButton.png">
+            <div class="button">
+                <img class="img-text" src="img/information/button/EvaluationText.png">
+            </div>
         </div>
     </div>
-    <div style="position: absolute; z-index: 0; padding: 0; right: 0; top: 20px">
-        <div style="position: absolute; padding: 0; right: 0;">
-            <img src="img/information/line/CertificateLine.png">
+    <div style="position: absolute; z-index: 0; padding: 0; right: 0;">
+        <div style="position: absolute; padding: 0; right: 0; top: -125px">
+            <img src="img/information/button/CertificateLine.png">
         </div>
-        <div class="img-button" style="position: absolute; padding: 0; right: 320px; top: 320px;">
-            <img  src="img/information/line/CertificateButton.png">
+        <div class="img-button" style="position: absolute; padding: 0; right: 320px; top: 340px;">
+            <div class="button">
+                <img class="img-text" src="img/information/button/CertificateText.png">
+            </div>
         </div>
     </div>
 
