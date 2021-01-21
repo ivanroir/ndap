@@ -19,71 +19,77 @@
             overflow: hidden;
         }
 
-        .img-button {
-            cursor: pointer;
-        }
-
         .button {
-            background: url(img/information/button/Button.png);
+            background: url(img/information/button/Button.png) no-repeat center center ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 145px;
             width: 325px;
         }
 
         .button:hover {
-            background: url(img/information/button/ButtonHover.png);
+            background: url(img/information/button/ButtonHover.png) no-repeat center center;
+            
         }
 
-        .img-text {
-            position: absolute;
-            top: 50%;  
-            left: 50%; 
-            transform: translate(-50%, -50%); 
+        .button-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .img {
+            cursor: pointer;
         }
 
     </style>    
 </head>
 <body>
-    <div style="position: absolute; z-index: 1; padding: 0; left: 0; top: -50px;">
-        <div style="position: absolute; padding: 0; left: 0; top: -75px;">
-            <img src="img/information/button/ElectionLine.png">
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+            <img class="img" src="img/information/button/ElectionText.png" style="position: absolute;">
         </div>
-        <div class="img-button" style="position: absolute; padding: 0; left: 240px; top: 180px;">
-            <div class="button">
-                <img class="img-text" src="img/information/button/ElectionText.png">
-            </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+            <img class="img" src="img/information/button/PreTestText.png" style="position: absolute;">
         </div>
     </div>
-    <div style="position: absolute; z-index: 1; padding: 0; right: 0; top: -50px;">
-        <div style="position: absolute; padding: 0; right: 0; top: -75px">
-            <img src="img/information/button/PreTestLine.png">
+    
+
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+            <img class="img" src="img/information/button/EvaluationText.png" style="position: absolute;"> 
         </div>
-        <div class="img-button" style="position: absolute; padding: 0; right: 240px; top: 180px;">
-            <div class="button">
-                <img class="img-text" src="img/information/button/PreTestText.png">
-            </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" >
+            <img class="img" src="img/information/button/CertificateText.png" style="position: absolute;"> 
         </div>
     </div>
 
-    <div style="position: absolute; z-index: 0; padding: 0; left: 0; ">
-        <div style="position: absolute; padding: 0; left: 0; top: -125px;">
-            <img src="img/information/button/EvaluationLine.png">
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+            <img class="img" src="img/information/button/MembershipText.png" style="position: absolute;"> 
         </div>
-        <div class="img-button" style="position: absolute; padding: 0; left: 320px; top: 340px;">
-            <div class="button">
-                <img class="img-text" src="img/information/button/EvaluationText.png">
-            </div>
-        </div>
-    </div>
-    <div style="position: absolute; z-index: 0; padding: 0; right: 0;">
-        <div style="position: absolute; padding: 0; right: 0; top: -125px">
-            <img src="img/information/button/CertificateLine.png">
-        </div>
-        <div class="img-button" style="position: absolute; padding: 0; right: 320px; top: 340px;">
-            <div class="button">
-                <img class="img-text" src="img/information/button/CertificateText.png">
-            </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+            <img class="img" src="img/information/button/SouvenirText.png" style="position: absolute;"> 
         </div>
     </div>
+
+    <script>
+        function hover(element) {
+            element.setAttribute('src', 'img/information/button/ButtonHover.png');
+        }
+
+        function unhover(element) {
+            element.setAttribute('src', 'img/information/button/Button.png');
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
