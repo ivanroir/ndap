@@ -48,19 +48,16 @@
         </div>
         <div class="col-10 " style="display: flex">
             <div class="row">
-                <div class="col-12 text-end">
-                    <img id="sponsor" src="img/booth/MajorSponsor.png" /> 
-                </div>
                 <div id="first" class="col-12" >
                     <div  class="row" style="height: 100%; padding: 20px; align-items: center; ">
                         <div class="col-12 text-center">
-                            <img src="img/booth/1st.png"  />
+                            <img class="img-fluid" src="img/booth/1st.png"  />
                         </div>
                         <div class="col-6 text-center">
-                            <img src="img/booth/2nd.png"  />
+                            <img class="img-fluid" src="img/booth/2nd.png"  />
                         </div>
                         <div class="col-6 text-center">
-                            <img src="img/booth/3rd.png"  />
+                            <img class="img-fluid" src="img/booth/3rd.png"  />
                         </div>
                     </div>
                 </div>
@@ -91,12 +88,10 @@
             if(document.getElementById("first").style.display == "none") {
                 document.getElementById("first").style.display = "block";
                 document.getElementById("second").style.display = "none";
-                document.getElementById("sponsor").src = 'img/booth/MajorSponsor.png';
             }
             else {
                 document.getElementById("first").style.display = "none";
                 document.getElementById("second").style.display = "block";
-                document.getElementById("sponsor").src = 'img/booth/MinorSponsor.png';
             }
         }
     </script>
