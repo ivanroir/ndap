@@ -3,9 +3,10 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <meta username="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
 
     <title>ndap-ancon</title>
     <style>
@@ -94,6 +95,10 @@
         }
       }
 
+      .modal {
+        display: flex !important; 
+      }
+
     </style>
   </head>
 
@@ -108,41 +113,26 @@
       <div class="wide-screen2" style="height: 10vh; background-color: #01122a;"></div>
       
       <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1">
+    <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false"  tabindex="-1" style="background-color: rgba(0,0,0,.7); display: flex !important; align-items: center; justify-content: center;">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body" style="background-color: white; align-items: center; justify-content: center; display: flex;">
-            <div class="row" style="border: 50px solid #011b3f; padding: 50px"> 
+          <div class="modal-body" style="padding: 12px; background-color: white; align-items: center; justify-content: center; display: flex;">
+            <div class="row" style="padding: 50px; background-image: url(img/login/bg.png); background-repeat: no-repeat; background-attachment: fixed; background-position: center;"> 
               <div class="col-12 text-center mb-5 p-0">
-                <img class="img-responsive" src="img/OtsukaLogo.png" alt="OTSUKA LOGO"/>
+                <img class="img-responsive" src="img/login/NDAPLogo.png" alt="NDAP LOGO"/>
               </div>
               <div class="col-12">
                 <div class="col-12">
                   <div class="form-group">
                     <div class="row">
-                      <div class="col-2">
-                        <label for="name">NAME</label>
+                      <div class="col-4">
+                        <img src="img/login/username.png" alt="USERNAME" />
                       </div>
-                      <div class="col-9">
-                        <input type="text" class="form-control" id="name" required>
+                      <div class="col-7">
+                        <input type="text" class="form-control" id="username" required>
                       </div>
-                      <div class="col-1" style="text-align: end;">
-                        <label id="name_required" style="color: red;  display: none;">*</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-2">
-                        <label for="clinic">HOSPITAL</label>
-                      </div>
-                      <div class="col-9">
-                        <input type="text" class="form-control" id="clinic" required>
-                      </div>
-                      <div class="col-1" style="text-align: end;">
-                        <label id="clinic_required" style="color: red;  display: none;">*</label>
+                      <div class="col-1" style="text-align: start;">
+                        <label id="username_required" style="color: red;  display: none;">*</label>
                       </div>
                     </div>
                   </div>
@@ -150,30 +140,14 @@
                 <div class="col-12">
                   <div class="form-group">
                     <div class="row">
-                      <div class="col-2">
-                        <label for="specialist">SPECIALIST</label>
+                      <div class="col-4">
+                        <img src="img/login/password.png" alt="PASSWORD" />
                       </div>
-                      <div class="col-9">
-                        <input type="text" class="form-control" id="specialist" required>
+                      <div class="col-7">
+                        <input type="text" class="form-control" id="password" required>
                       </div>
-                      <div class="col-1" style="text-align: end;">
-                        <label id="specialist_required" style="color: red;  display: none;">*</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="col-12">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-2">
-                        <label for="email">EMAIL</label>
-                      </div>
-                      <div class="col-9">
-                        <input type="text" class="form-control" id="email" required>
-                      </div>
-                      <div class="col-1" style="text-align: end;">
-                        <label id="email_required" style="color: red;  display: none;">*</label>
+                      <div class="col-1" style="text-align: start;">
+                        <label id="password_required" style="color: red;  display: none;">*</label>
                       </div>
                     </div>
                   </div>
@@ -181,105 +155,45 @@
               </div>
               <div class="col-12 text-center">
                 <button type="button" id="submit" onclick="sendBackMessage()">
-                  <img src="img/submit.png" style="width: 100%;" alt="SUBMIT BUTTON" />
+                  <img src="img/login/submit.png" style="width: 100%;" alt="SUBMIT BUTTON" />
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="modal fade" id="addressModal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body" style="background-color: #024ea2;">
-            <div class="row">
-              <div class="col-12 text-center mb-5 p-0">
-                <img class="img-responsive" src="img/OtsukaLogo.png" alt="OTSUKA LOGO"/>
-              </div>
-              <div class="col-2"></div>
-              <div class="col-8">
-                <div class="col-12">
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-12">
-                        <label for="address">ADDRESS</label>
-                      </div>
-                    </div>
-                    <input type="text" class="form-control" id="address" required>
-                  </div>
-                </div>                
-              </div>
-              <div class="col-2"></div>
-              <div class="col-12 text-center">
-                <button type="button" id="submit" onclick="sendAddress()">
-                  <img src="img/submit.png" style="width: 100%;" alt="SUBMIT BUTTON" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <script>
-      function sendAddress(){
-        var data = document.getElementById("address").value;
-        gameInstance.SendMessage("Address", "SendToUnity", data );
-        $('#addressModal').modal('hide');
-      }
-    </script>
+    </div>    
 
     <script>
       function sendBackMessage(){
-        var fname = true, specialistType = true, hospital = true, emailAdd = true;
-        var name = document.getElementById("name").value;
-        var specialist = document.getElementById("specialist").value;
-        var clinic = document.getElementById("clinic").value;
-        var email = document.getElementById("email").value;
+        var user_name = true, pword = true;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
        
 
-        if (!document.getElementById('name').validity.valid){
-          document.getElementById('name_required').style.display = "inline";
-          fname = false;
+        if (!document.getElementById('username').validity.valid){
+          document.getElementById('username_required').style.display = "inline";
+          user_name = false;
         }
         else {
-          document.getElementById('name_required').style.display = "none";
-          fname = true;
+          document.getElementById('username_required').style.display = "none";
+          user_name = true;
         }
         
-        if (!document.getElementById('specialist').validity.valid){
-          document.getElementById('specialist_required').style.display = "inline";
-          specialistType = false;
+        if (!document.getElementById('password').validity.valid){
+          document.getElementById('password_required').style.display = "inline";
+          pword = false;
         }
         else {
-          document.getElementById('specialist_required').style.display = "none";
-          specialistType = true;
+          document.getElementById('password_required').style.display = "none";
+          pword = true;
         }
 
-        if (!document.getElementById('clinic').validity.valid){
-          document.getElementById('clinic_required').style.display = "inline";
-          hospital = false;
-        }
-        else {
-          document.getElementById('clinic_required').style.display = "none";
-          hospital = true;
-        }
-
-        if (!document.getElementById('email').validity.valid){
-          document.getElementById('email_required').style.display = "inline";
-          emailAdd = false;
-        }
-        else {
-          document.getElementById('email_required').style.display = "none";
-          emailAdd = true;
-        }
-
-        if (fname && specialistType && hospital && emailAdd) {
-          var data = name + "\t" + specialist + "\t" + clinic + "\t" + email;
+        if (user_name && pword) {
+          var data = username + "\t" + password;
           gameInstance.SendMessage("Main Menu", "SendToUnity", data );
+
+          ///////// IF LOGIN FAILED DONT CLOSE 
           $('#exampleModal').modal('hide');
         }
       }
