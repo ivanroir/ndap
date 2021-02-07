@@ -207,11 +207,11 @@
   var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
 
   function CheckData(data) {
-    if(data == "exist") {
-      $('#exampleModal').modal('hide');
-    }
-    else if(data == "Wrong username/password") {
+    if(data == "Wrong username/password") {
       $('#exampleModal').modal('show');
+    }
+    else {
+      $('#exampleModal').modal('hide');
     }
     console.log(data);
   }
