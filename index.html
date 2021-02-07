@@ -111,7 +111,6 @@
         <div class="progress"><div class="full"></div></div>
       </div>
       <div class="wide-screen2" style="height: 10vh; background-color: #01122a;"></div>
-      
       <!-- Modal -->
     <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false"  tabindex="-1" style="background-color: rgba(0,0,0,.7); display: flex !important; align-items: center; justify-content: center;">
       <div class="modal-dialog">
@@ -194,7 +193,7 @@
           gameInstance.SendMessage("Main Menu", "SendToUnity", data );
 
           ///////// IF LOGIN FAILED DONT CLOSE 
-          $('#exampleModal').modal('hide');
+          
         }
       }
     </script>
@@ -206,6 +205,18 @@
   <script src="Build/UnityLoader.js"></script>
   <script>
   var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
+
+  function CheckData(data) {
+    if(data == "exist") {
+      $('#exampleModal').modal('hide');
+    }
+    else if(data == "Wrong username/password") {
+      $('#exampleModal').modal('show');
+    }
+    console.log(data);
+  }
+
+
   function UnityProgress(gameInstance, progress) {
     if (!gameInstance.Module) {
       return;
