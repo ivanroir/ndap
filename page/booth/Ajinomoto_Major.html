@@ -15,17 +15,43 @@
             background-image: url(img/bg.png); 
             background-repeat: no-repeat; 
             background-attachment: fixed; 
-            background-position: center;
+            background-position: bottom;
             background-size: cover;
+            overflow: hidden;
         }
+
+        .middle-video {
+          position: absolute;
+          top: 26%;
+          left: 35%;
+        }
+
+        .left-video {
+          position: absolute;
+          top: 44%;
+          left: -50px;
+        }
+
     </style>
   </head>
   <body>
 
-
-    <div>
-
-
+    <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end;">
+      <div class="row" style="padding-bottom: 75px;">
+        <div class="col" style="position: relative;">
+          <img src="img/AjinomotoBooth.png" style="width: inherit;"/>
+          <div class="middle-video">
+            <video style="width: 50%; height: 175px;" controls autoplay>
+              <source src="img/video1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="left-video">
+            <video style="width: 35%; height: 105px;" controls autoplay>
+              <source src="img/video1.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
     </div>
 
 
