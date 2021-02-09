@@ -17,36 +17,36 @@
       background-image: url(img/bg.png);
       background-repeat: no-repeat;
       background-attachment: fixed;
-      background-position: bottom;
+      background-position: top;
       background-size: cover;
       overflow: hidden;
     }
 
     .middle-video {
       position: absolute;
-      top: 25%;
+      top: 25.2%;
       left: 40%;
-      z-index: 1;
+      z-index: 4;
     }
 
     .poster {
       position: absolute;
-      top: 21%;
-      left: 17%;
+      top: 20%;
+      left: 19%;
       z-index: 3;
     }
 
     .poster-button {
-      width: 10em;
-      height: 21em;
+      width: 9em;
+      height: 20em;
       background: rgba(0,0,0,0);
       opacity: 0;
       z-index: 3;
     }
 
     .poster-button-1 {
-      width: 10em;
-      height: 21em;
+      width: 9em;
+      height: 20em;
       background: orange;
       z-index: 3;
     }
@@ -56,19 +56,17 @@
 
 <body>
 
-  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end;">
-    <div class="row" style="padding-bottom: 75px;">
-      <div class="col" style="position: relative;">
-        <img src="img/WestmontBooth.png" style="width: inherit;" />
+  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end; padding-bottom: 40px;">
+    <div class="row" style="position: relative; justify-content: center;">
+        <img class="img-fluid"  src="img/WestmontBooth.png" style="width: 90%;" />
         <div class="middle-video">
-          <video id="video1" style="width: 61%; margin-left: 4%;" autoplay  onclick="video1()">
+          <video id="video1" style="width: 33.6%; margin-left: 2%;" autoplay  onclick="video1()">
             <source src="video/video1.mp4" type="video/mp4" allowfullscreen> 
           </video>
         </div>
         <div class="poster">
             <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
         </div>
-      </div>
     </div>
   </div>
 
@@ -96,7 +94,7 @@
     setInterval(function(){ videoCenter.play(); }, 10);
 
     function video1() {
-
+      
       if (videoCenter.requestFullscreen) {
         videoCenter.requestFullscreen();
       } else if (videoCenter.webkitRequestFullscreen) {
