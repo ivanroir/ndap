@@ -25,48 +25,106 @@
     .middle-video {
       position: absolute;
       top: 25%;
-      left: 41.8%;
+      left: 44.6%;
       z-index: 4;
     }
 
     .poster {
       position: absolute;
       top: 22%;
-      left: 30%;
+      left: 26%;
       z-index: 3;
     }
 
     .poster-button {
-      width: 8em;
-      height: 18em;
-      background: rgba(0,0,0,0);
+      width: 10em;
+      height: 22em;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 3;
     }
 
     .poster-button-1 {
-      width: 8em;
-      height: 18em;
+      width: 10em;
+      height: 22em;
       background: orange;
       z-index: 3;
     }
+
+    .download {
+      position: absolute;
+      top: 63%;
+      left: 74%;
+      z-index: 4;
+    }
+
+    .download-button {
+      width: 5em;
+      height: 3em;
+      background: rgba(0, 0, 0, 0);
+      opacity: 0;
+      z-index: 4;
+    }
+
+    .download-button-1 {
+      width: 5em;
+      height: 3em;
+      background: lightgreen;
+      z-index: 4;
+    }
+
+    #video1 {
+      width: 26.3%;
+      margin-left: -1%;
+    }
+
+    .booth {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: 40px;
+    }
+
 
   </style>
 </head>
 
 <body>
 
-  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end; padding-bottom: 40px;">
-    <div class="row" style="position: relative; justify-content: center;">
-        <img class="img-fluid"  src="img/FKBooth.png" style="width: 60%;" />
-        <div class="middle-video">
-          <video id="video1" style="width: 22.4%; margin-left: 2.7%;" autoplay  onclick="video1()">
-            <source src="video/video1.mp4" type="video/mp4" allowfullscreen> 
-          </video>
-        </div>
-        <div class="poster">
+  <form action="../../../booth.php" id="form" name="form" method="post">
+    <input type="hidden" id="username" name="username" readonly hidden />
+    <input type="hidden" id="password" name="password" readonly hidden />
+    <input type="hidden" id="booth" name="booth" value="booth_fk" readonly hidden />
+    <input type="hidden" id="location" name="location" value="https://ndap2021.online/page/booth/fk/" readonly hidden />
+  </form>
+
+  <div class="row" style="height: 100vh;">
+    <div class="col-12" style="height: 90vh;">
+      <div class="booth container">
+
+        <div class="row" style="position: relative; justify-content: center;">
+          <img class="img-fluid" src="img/FKBooth1.png" style="width: 70%;" />
+          <div class="middle-video">
+            <video id="video1" autoplay onclick="video1()">
+              <source src="video/video1.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+          <div class="download">
+            <a href="https://drive.google.com/file/d/1cFlCX8loj_9qYnGFZh0MK64c7lQRaF0Z/view?usp=sharing"> <button
+                class="download-button"></button> </a>
+          </div>
+          <div class="poster">
             <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
+          </div>
         </div>
+      </div>
+
+    </div>
+    <div class="col-12 text-end" style="position: sticky; bottom: 0;">
+      <a id="back" type="button" class="btn btn-link buttons"><img
+          src="img/back.png" /></a>
     </div>
   </div>
 
@@ -75,7 +133,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
           <img src="img/poster.jpg" style="height: 100%;" />
@@ -88,13 +147,14 @@
 
 
   <script>
-
     var videoCenter = document.getElementById("video1");
 
-    setInterval(function(){ videoCenter.play(); }, 10);
+    setInterval(function () {
+      videoCenter.play();
+    }, 10);
 
     function video1() {
-      
+
       if (videoCenter.requestFullscreen) {
         videoCenter.requestFullscreen();
       } else if (videoCenter.webkitRequestFullscreen) {
@@ -105,18 +165,41 @@
 
       if (videoCenter.exitFullscreen) {
         videoCenter.exitFullscreen();
-      } else if (videoCenter.webkitExitFullscreen) { 
+      } else if (videoCenter.webkitExitFullscreen) {
         videoCenter.webkitExitFullscreen();
       } else if (videoCenter.msExitFullscreen) {
         videoCenter.msExitFullscreen();
       }
 
-      if(videoCenter.muted == true) {
+      if (videoCenter.muted == true) {
         videoCenter.muted = false;
       }
     }
+  </script>
 
-  
+  <script>
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
+  </script>
+
+  <script>
+    document.getElementById("username").value = atob(localStorage.getItem("email"));
+    document.getElementById("password").value = atob(localStorage.getItem("code"));
+    document.getElementById("location").value = "https://ndap2021.online/page/booth/fk/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("back").href = "https://ndap2021.online/page/booth/?e=" + getParameter("e") + "&c=" + getParameter("c");
+
+
+    window.onload = function () {
+      if (!sessionStorage.getItem("submitted")) {
+        sessionStorage.setItem("submitted", true);
+        document.forms['form'].submit();
+      }else {
+        console.log("already submitted, not repeating");
+        sessionStorage.removeItem("submitted");
+      }
+    }
 
   </script>
 

@@ -24,143 +24,240 @@
 
     .middle-video {
       position: absolute;
-      top: 25%;
-      left: 35%;
-      z-index: 1;
+      top: 26.5%;
+      left: 38.5%;
+      z-index: 3;
     }
 
     .left-video {
       position: absolute;
-      top: 44%;
+      top: 44.9%;
     }
 
     .newsletter-1 {
       position: absolute;
+      left: 68.9%;
       top: 34%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 5;
     }
-    
+
     .newsletter-2 {
       position: absolute;
+      left: 68.9%;
       top: 53%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 5;
     }
 
     .newsletter-3 {
       position: absolute;
+      left: 68.9%;
       top: 71%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 5;
     }
 
     .newsletter-button {
-      width: 5vw;
-      height: 4vw;
-      background: rgba(0,0,0,0);
+      width: 6vw;
+      height: 5vw;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
-      z-index: 2;
+      z-index: 5;
     }
 
     .poster-1 {
       position: absolute;
-      top: 40%;
-      left: 27%;
-      z-index: 3;
+      top: 33%;
+      left: 26%;
+      z-index: 2;
     }
 
     .poster-2 {
       position: absolute;
-      top: 43%;
-      right: 13%;
-      z-index: 3;
+      top: 40%;
+      left: 80%;
+      z-index: 10;
     }
 
     .poster-button-1 {
+      width: 9vw;
+      height: 19vw;
+      background: rgba(0, 0, 0, 0);
+      opacity: 0;
+      z-index: 4;
+    }
+
+    .poster-button-2 {
       width: 7vw;
-      height: 13vw;
-      background: rgba(0,0,0,0);
+      height: 17vw;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 3;
     }
 
-    .poster-button-2 {
-      width: 5vw;
-      height: 13vw;
-      background: rgba(0,0,0,0);
-      opacity: 0;
-      z-index: 3;
+    #video1 {
+      width: 24.2%;
     }
+
+    #video2 {
+      width: 14%;
+      margin-left: 6.8%;
+    }
+
+    .booth {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: 40px;
+    }
+
+    .send-message {
+      position: absolute;
+      top: 72%;
+      left: 61%;
+      z-index: 4;
+    }
+
+    .send-message-button {
+      width: 5vw;
+      height: 2vw;
+      background: rgba(0, 0, 0, 0);
+      opacity: 0;
+      z-index: 4;
+    }
+
 
   </style>
 </head>
 
 <body>
 
-  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end;">
-    <div class="row" style="padding-bottom: 75px;">
-      <div class="col" style="position: relative;">
-        <img src="img/AjinomotoBooth.png" style="width: inherit;" />
-        <div class="middle-video">
-          <video id="video1" style="width: 36%;  margin-left: 7%;" autoplay  onclick="video1()">
-            <source src="video/center.mp4" type="video/mp4" allowfullscreen> 
-          </video>
-        </div>
-        <div class="left-video">
-          <video id="video2" style="width: 14%; margin-left: 6.7%;" autoplay muted onclick="video2()">
-            <source src="video/left.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="newsletter-1">
-          <a href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing" target="_blank">
+  <form action="../../../booth.php" id="form" name="form" method="post">
+    <input type="hidden" id="username" name="username" readonly hidden />
+    <input type="hidden" id="password" name="password" readonly hidden />
+    <input type="hidden" id="booth" name="booth" value="booth_ajinomoto" readonly hidden />
+    <input type="hidden" id="location" name="location" readonly hidden />
+  </form>
+
+  <div class="row" style="height: 100vh;">
+    <div class="col-12" style="height: 85vh;">
+      <div class="booth">
+
+        <div class="row" style="position: relative; justify-content: center;">
+          <img class="img-fluid" src="img/AjinomotoBooth.png" />
+          <div class="middle-video">
+            <video id="video1" autoplay onclick="video1()">
+              <source src="video/center.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+          <div class="left-video">
+            <video id="video2" autoplay muted onclick="video2()">
+              <source src="video/left.mp4" type="video/mp4">
+            </video>
+          </div>
+          <a class="newsletter-1"
+            href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing" target="_blank">
             <button class="newsletter-button"> </button>
           </a>
-        </div>
-        <div class="newsletter-2">
-          <a href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing" target="_blank">
+          <a class="newsletter-2"
+            href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing" target="_blank">
             <button class="newsletter-button"> </button>
           </a>
-        </div>
-        <div class="newsletter-3">
-          <a href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing" target="_blank">
+          <a class="newsletter-3"
+            href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing" target="_blank">
             <button class="newsletter-button"> </button>
           </a>
+          <div class="send-message">
+            <button class="send-message-button" data-bs-toggle="modal" data-bs-target="#messageModal"> </button>
+          </div>
+          <div class="poster-1">
+            <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
+          </div>
+          <div class="poster-2">
+            <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
+          </div>
         </div>
-        <div class="poster-1">
-            <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
-        </div>
-        <div class="poster-2">
-          <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
       </div>
-      </div>
+
+    </div>
+    <div class="col-12 text-end" style="position: sticky; bottom: 0;">
+      <a id="back" type="button" class="btn btn-link buttons"><img
+          src="img/back.png" /></a>
     </div>
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal fade" id="poster1" tabindex="-1" aria-labelledby="poster1Label" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="img/poster.jpg" style="height: 100%;" />
+          <img src="img/poster1.png" />
         </div>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="poster2" tabindex="-1" aria-labelledby="poster2Label" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content" style="background: rgba(0,0,0,0);">
+        <div class="modal-header" style="border: 0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="img/poster2.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+    
+
+  <form action="../../../boothSendMessage.php" id="form" name="form" method="post">
+    <div class="modal fade" id="messageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="messageLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="messageLabel">SEND MESSAGE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <input type="hidden" id="email" name="username" readonly hidden/>
+              <input type="hidden" id="code" name="password" readonly hidden/>
+              <input type="hidden" name="booth" value="booth_ajinomoto_message" readonly hidden />
+              <input type="hidden" id="location1" name="location" readonly hidden />
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>  
+
+  <!-- Modal -->
 
   <!-- Optional JavaScript; choose one of the two! -->
 
 
   <script>
-
     var videoCenter = document.getElementById("video1");
     var videoLeft = document.getElementById("video2");
 
-    setInterval(function(){ videoCenter.play(); }, 10);
-    setInterval(function(){ videoLeft.play(); }, 10);
+    setInterval(function () {
+      videoCenter.play();
+    }, 10);
+    setInterval(function () {
+      videoLeft.play();
+    }, 10);
 
     function video1() {
 
@@ -173,14 +270,14 @@
       }
 
       if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) { 
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
 
-      if(videoCenter.muted == true) {
+      if (videoCenter.muted == true) {
         videoLeft.muted = true;
         videoCenter.muted = false;
       }
@@ -197,19 +294,45 @@
       }
 
       if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) { 
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
 
-      if(videoLeft.muted == true) {
+      if (videoLeft.muted == true) {
         videoCenter.muted = true;
         videoLeft.muted = false;
       }
     }
+  </script>
 
+  <script>
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
+  </script>
+
+  <script>
+    document.getElementById("username").value = atob(localStorage.getItem("email"));
+    document.getElementById("password").value = atob(localStorage.getItem("code"));
+    document.getElementById("email").value = atob(localStorage.getItem("email"));
+    document.getElementById("code").value = atob(localStorage.getItem("code"));
+    document.getElementById("location").value = "https://ndap2021.online/page/booth/ajinomoto/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("location1").value = "https://ndap2021.online/page/booth/ajinomoto/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("back").href = "https://ndap2021.online/page/booth/?e=" + getParameter("e") + "&c=" + getParameter("c");
+
+    window.onload = function () {
+      if (!sessionStorage.getItem("submitted")) {
+        sessionStorage.setItem("submitted", true);
+        document.forms['form'].submit();
+      }else {
+        console.log("already submitted, not repeating");
+        sessionStorage.removeItem("submitted");
+      }
+    }
 
   </script>
 

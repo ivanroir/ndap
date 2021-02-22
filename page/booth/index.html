@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -11,44 +12,58 @@
             font-family: Pirulen;
             src: url(font/pirulen.ttf);
         }
-        
+
         body {
             background-image: url("img/booth/bg.png");
             background-repeat: no-repeat;
-            background-size: cover; 
+            background-size: cover;
             height: 100vh;
             overflow: hidden;
         }
 
         .overlay {
-            position: absolute; 
+            position: absolute;
             bottom: 50px;
             left: 0;
             text-align: center;
             padding-bottom: 20px;
         }
 
+        .modal-header {
+            display: inline;
+            padding: 0;
+            border-bottom: 0;
+        }
+
+        .modal-footer {
+            border-top: 0;
+        }
     </style>
 </head>
+
 <body>
 
-    <audio id="bgm" autoplay loop>
+    <audio id="bgm" autoplay mute loop>
         <source src="audio/bgm.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <audio id="voice-over" autoplay>
+    <audio id="voice-over" autoplay mute>
         <source src="audio/voice_over.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <div id="portrait"
+        style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+        <h1>PLEASE USE LANDSCAPE</h1>
+    </div>
 
-    <div class="row" style="height: 100%; padding: 0; margin: 0">
+    <div class="row" id="landscape" style="height: 100%; padding: 0; margin: 0">
         <div class="col-2" style="position: relative; padding: 0px;">
-            <img class="img-fluid"src="img/booth/banner.png" style="height: 100%; width: 100%;" /> 
+            <img class="img-fluid" src="img/booth/banner.png" style="height: 100%; width: 100%;" />
             <div class="overlay">
                 <div class="row">
                     <div class="col-6 p-1 text-end">
-                        <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/home.png" /></button>
+                        <button class="btn" onclick="home()"><img class="img-fluid" src="img/booth/home.png" /></button>
                     </div>
                     <div class="col-6 p-1 text-start">
                         <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/next.png" /></button>
@@ -57,68 +72,194 @@
             </div>
         </div>
         <div class="col-10 " style="display: flex">
-            <div class="row">
-                <div id="first" class="col-12" >
-                    <div class="row" style="height: 90%; align-items: center; ">
-                        <div class="col-12 text-center" style="padding-bottom: 10px;">
-                            <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/AbbottBooth.png" style="width: 60%;" /></a>
-                        </div>
-                        <div class="col-12 text-center" style="padding-bottom: 10px;">
-                            <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid" src="img/booth/AjinomotoBooth.png" style="width: 60%;" /></a>
+            <div id="first" class="col-12">
+                <div class="row" style="height: 90%; align-items: center; ">
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/Abbott Booth.png"
+                                style="width: 60%;" /></a>
+                    </div>
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a id="ajinomoto" href="https://ndap2021.online/page/booth/ajinomoto/"><img
+                                class="img-fluid" src="img/booth/Ajinomoto Booth2.png" style="width: 60%;" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="second" class="col-12" style="display: none;">
+                <div class="row" style="height: 90%; align-items: center; ">
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a id="kalbe" href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid"
+                                src="img/booth/Kalbe Booth.png" style="width: 60%;" /></a>
+                    </div>
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a id="nestle" href="https://ndap2021.online/page/booth/nestle/"><img class="img-fluid"
+                                src="img/booth/Nestle Booth.png" style="width: 60%;" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="third" class="col-12" style="display: none;">
+                <div class="row" style="height: 100%; padding: 40px;  ">
+                    <div class="col-6 text-center">
+                        <a id="fk" href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FK Booth.png"
+                                style="width: 80%;" /></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a id="gx" href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png"
+                                style="width: 70%;" /></a>
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="row">
+                            <div class="col-3">
+                            </div>
+                            <div class="col-6 text-center">
+                                <a id="westmont" href="https://ndap2021.online/page/booth/westmont/"><img
+                                        src="img/booth/Westmont Booth.png" style="width: 75%;" /></a>
+                            </div>
+                            <div class="col-3">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="second" class="col-12" style="display: none;">
-                    <div class="row" style="height: 100%; padding: 20px; align-items: center; ">
-                        <div class="col-6 text-end">
-                            <img src="img/booth/basic.png" style="width: 55%;"  />
-                        </div>
-                        <div class="col-6 text-start">
-                            <img src="img/booth/basic.png" style="width: 55%;" />
-                        </div>
-                        <div class="col-6 text-center">
-                            <img src="img/booth/basic.png" style="width: 55%;" />
-                        </div>
-                        <div class="col-6 text-center">
-                            <img src="img/booth/basic.png" style="width: 55%;" />
-                        </div>
+            </div>
+            <div id="fourth" class="col-12" style="display: none;">
+                <div class="row" style="height: 100%; padding: 40px; align-items: center; ">
+                    <div class="col-6 text-center">
+                        <a id="stada" href="https://ndap2021.online/page/booth/stada/"><img src="img/booth/Stada Booth.png"
+                                style="width: 70%;" /></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a id="yakult" href="https://ndap2021.online/page/booth/yakult/"><img src="img/booth/Yakult Booth.png"
+                                style="width: 70%;" /></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center" id="staticBackdropLabel">WELCOME </h2>
+                </div>
+                <div class="modal-body text-center ">
+                    <h4 style="font-weight: normal;">NDAP VIRTUAL BOOTH EXHIBIT</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="enter();">ENTER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#staticBackdrop').modal('show');
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        var page = 1;
+
         function next() {
-            if(document.getElementById("first").style.display == "none") {
+            page++;
+            if (page == 1) {
                 document.getElementById("first").style.display = "block";
                 document.getElementById("second").style.display = "none";
-            }
-            else {
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 2) {
                 document.getElementById("first").style.display = "none";
                 document.getElementById("second").style.display = "block";
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 3) {
+                document.getElementById("first").style.display = "none";
+                document.getElementById("second").style.display = "none";
+                document.getElementById("third").style.display = "block";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 4) {
+                document.getElementById("first").style.display = "none";
+                document.getElementById("second").style.display = "none";
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "block";
+                page = 0;
             }
+        }
+
+        function home() {
+            page = 1;
+            document.getElementById("first").style.display = "block";
+            document.getElementById("second").style.display = "none";
+            document.getElementById("third").style.display = "none";
+            document.getElementById("fourth").style.display = "none";
         }
     </script>
 
     <script>
-        var ctr = 0;
         var bgm = document.getElementById("bgm");
         bgm.volume = 0.1;
 
         var voiceOver = document.getElementById("voice-over");
         voiceOver.volume = 1;
-        
-        setInterval(function(){ bgm.play(); }, 10);
-        setInterval(function(){ 
-            if (ctr < 100) {
-                voiceOver.play(); 
-                ctr++;
+
+        function enter() {
+            bgm.play();
+            voiceOver.play();
+        }
+    </script>
+
+    <script>
+        if (screen.availHeight > screen.availWidth) {
+            document.getElementById('landscape').style.display = "none";
+            document.getElementById('portrait').style.display = "flex";
+        } else if (screen.availHeight < screen.availWidth) {
+            document.getElementById('landscape').style.display = "flex";
+            document.getElementById('portrait').style.display = "none";
+        }
+        window.addEventListener("orientationchange", function () {
+            // Announce the new orientation number
+            if (screen.availHeight > screen.availWidth) {
+                document.getElementById('landscape').style.display = "none";
+                document.getElementById('portrait').style.display = "flex";
+            } else if (screen.availHeight < screen.availWidth) {
+                document.getElementById('landscape').style.display = "flex";
+                document.getElementById('portrait').style.display = "none";
             }
-        }, 10);
+
+        }, false);
+    </script>
+
+    <script>
+        function getParameter(parameterName) {
+            let parameters = new URLSearchParams(window.location.search);
+            return parameters.get(parameterName);
+        }
+
+        localStorage.setItem("email", getParameter("e"));
+        localStorage.setItem("code", getParameter("c"));
+        sessionStorage.setItem("email", getParameter("e"));
+        sessionStorage.setItem("code", getParameter("c"));
+        
+    </script>
+
+    <script>
+      document.getElementById("ajinomoto").href = "https://ndap2021.online/page/booth/ajinomoto/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("kalbe").href = "https://ndap2021.online/page/booth/kalbe/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("nestle").href = "https://ndap2021.online/page/booth/nestle/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("fk").href = "https://ndap2021.online/page/booth/fk/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("gx").href = "https://ndap2021.online/page/booth/gx/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("westmont").href = "https://ndap2021.online/page/booth/westmont/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("stada").href = "https://ndap2021.online/page/booth/stada/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("yakult").href = "https://ndap2021.online/page/booth/yakult/?e=" + getParameter("e") + "&c=" + getParameter("c");
     </script>
 
 </body>
+
 </html>
